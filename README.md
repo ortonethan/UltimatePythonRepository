@@ -2,6 +2,8 @@
 
 ## Course Contents
 
+### [Unit 1](Unit1/README.md)
+
 1.1 Running Python and Printing
 
 1.2 Getting User Input

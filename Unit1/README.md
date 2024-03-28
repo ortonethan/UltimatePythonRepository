@@ -4,6 +4,7 @@ This material is adapted from the [University of Helsinki Python Programming MOO
 
 - [1.1 - Print Statements](#11-print-statements), [Exercises](#11-exercises)
 - [1.2 - Input From User](#12-input-from-user), [Exercises](#12-exercises)
+- [1.3 - Variables](#13-variables), [Exercises](#13-exercises)
 
 ## 1.1 Print Statements
 
@@ -184,3 +185,154 @@ These exercises are to be done in the [2InputAssignment.py](2InputAssignment.py)
 
     Mary is a valiant knight, born in the year 1572. One morning Mary woke up to an awful racket: a dragon was approaching the village. Only Mary could save the village's residents.
     ```
+
+## 1.3 Variables
+
+### Setting and Changing Variables
+
+So far, variables have been stored from the `input` command:
+
+```python
+name = input("What is your name? ")
+print("Hi, " + name)
+```
+
+They can also be "hard-coded" into the program:
+
+```python
+first_name = "Alice"
+last_name = "Cooper"
+```
+
+And variables can be used to set other variables:
+
+```python
+full_name = first_name + " " + last_name
+```
+
+Variables can be completely overwritten like here:
+
+```python
+letter = "a"
+letter = "b"
+```
+
+Or they can be modified like this:
+
+```python
+word = "python"
+word = word + "!!!"
+```
+
+### Variable Types
+
+Different data types may look the same:
+
+```python
+number1 = 100
+number2 = "100"
+
+print(number1)
+print(number2)
+```
+
+But may act differently:
+
+```python
+print(number1 + number1)
+print(number2 + number2)
+
+print(number1 / 2)
+print(number2 / 2)
+```
+
+### Printing With Types
+
+This doesn't work:
+
+```python
+secret_number = 42
+print("The secret number is: " + secret_number)
+```
+
+So we can:
+
+- use `str` to convert the number to a string:
+  ```python
+  print("The secret number is: " + str(secret_number))
+  ```
+- use commas to separate the strings and variables:
+  ```python
+  print("The secret number is:", secret_number)
+  ```
+- use f-strings:
+  ```python
+  print(f"The secret number is: {secret}")
+  ```
+
+### Floating Point Numbers
+
+In programming, these are numbers with decimal points. They can be used very similarly to integers:
+
+```python
+num1 = 2.5
+num2 = -1.25
+num3 = 3.62
+
+mean = (num1 + num2 + num3) / 3
+print(f"Mean: {mean}")
+```
+
+## 1.3 Exercises
+
+These exercises are to be done in the [3VariablesAssignment.py](3VariablesAssignment.py) file
+
+1. A friend is working on a resume job-seeking app. They want the information to print _exactly_ like this (down to how many space characters are displayed):
+
+   ```text
+   my name is Tim Tester, I am 20 years old
+
+   my skills are
+   - python (beginner)
+   - java (veteran)
+   - programming (semiprofessional)
+
+   I am looking for a job with a salary of 2000-3000 dollars per month
+   ```
+
+   Fix the code in the file so the formatting is exactly right.
+
+2. Keep the `x = 27` and `y = 15` statements in the code. Below those lines, write code so that the program prints out the following:
+
+   ```text
+   27 + 15 = 42
+   27 - 15 = 12
+   27 * 15 = 405
+   27 / 15 = 1.8
+   ```
+
+   The code should still work if we change the values of `x` and `y`. For example, if we changed them to `x = 4` and `y = 9`, the program should display:
+
+   ```text
+   4 + 9 = 13
+   4 - 9 = -5
+   4 * 9 = 36
+   4 / 9 = 0.4444444444444444
+   ```
+
+3. Each print command usually prints out a line of its own, complete with a new line at the end. However, if the print command is given an additional argument `end = ""`, it will not start a new line.
+
+   For example:
+
+   ```python
+   print("Hi ", end="")
+   print("there!")
+   ```
+
+   will print
+
+   ```text
+   Hi there!
+   ```
+
+   Fix the code in the file so that the entire calculation, complete with result, is printed out on a single line. Do not change the number of `print` commands used.

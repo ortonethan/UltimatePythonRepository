@@ -348,7 +348,7 @@ print("Subtracting: 7 - 2.5 =", 7 - 2.5)
 print("Multiplying: -1.5 * 3 =", -1.5 * 3)
 print("Dividing (producing decimal): 11 / 4 =", 11 / 4)
 print("Dividing (rounding down to produce whole number): 11 // 4 =", 11 // 4)
-print("Module (calculates the remainder of the first number divided by the second): 11 % 4 =", 11 % 4)
+print("Modulo (calculates the remainder of the first number divided by the second): 11 % 4 =", 11 % 4)
 print("Exponentiation (powers): 2 ** 3 =", 2 ** 3)
 ```
 

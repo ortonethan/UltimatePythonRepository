@@ -5,6 +5,7 @@ This material is adapted from the [University of Helsinki Python Programming MOO
 - [1.1 - Print Statements](#11-print-statements), [Exercises](#11-exercises)
 - [1.2 - Input From User](#12-input-from-user), [Exercises](#12-exercises)
 - [1.3 - Variables](#13-variables), [Exercises](#13-exercises)
+- [1.4 - Arithmetic Operators](#14-arithmetic-operators), [Exercises](#14-exercises)
 
 ## 1.1 Print Statements
 
@@ -336,3 +337,172 @@ These exercises are to be done in the [3VariablesAssignment.py](3VariablesAssign
    ```
 
    Fix the code in the file so that the entire calculation, complete with result, is printed out on a single line. Do not change the number of `print` commands used.
+
+## 1.4 Arithmetic Operators
+
+### Available operators:
+
+```python
+print("Adding: 5 + 3 =", 5 + 3)
+print("Subtracting: 7 - 2.5 =", 7 - 2.5)
+print("Multiplying: -1.5 * 3 =", -1.5 * 3)
+print("Dividing (producing decimal): 11 / 4 =", 11 / 4)
+print("Dividing (rounding down to produce whole number): 11 // 4 =", 11 // 4)
+print("Modulo (calculates the remainder of the first number divided by the second): 11 % 4 =", 11 % 4)
+print("Exponentiation (powers): 2 ** 3 =", 2 ** 3)
+```
+
+### Reading integers and floats from input
+
+You need to convert the input to a number type before using arithmetic operators:
+
+```python
+year_str = input("What year were you born in? ")
+year = int(year_str)
+print("You are", 2024 - year, "or", 2024 - year - 1, "years old")
+```
+
+```python
+height = float(input("What is your height in meters?"))
+weight = float(input("What is your weight in kilograms?"))
+bmi = weight / height ** 2
+print("Your BMI is", bmi)
+```
+
+### Arithmetic to existing variables
+
+Python code to take three numbers from input and calculate their sum:
+
+```python
+number1 = int(input("Please enter a number"))
+number2 = int(input("Please enter a number"))
+number3 = int(input("Please enter a number"))
+
+sum = number1 + number2 + number3
+print("The sum of the numbers is", sum)
+```
+
+Using two variables instead:
+
+```python
+sum = 0
+number = int(input("Please enter a number"))
+sum = sum + number
+number = int(input("Please enter a number"))
+sum = sum + number
+number = int(input("Please enter a number"))
+sum = sum + number
+
+print("The sum of the numbers is", sum)
+```
+
+Using the `+=` shorthand:
+
+```python
+sum = 0
+number = int(input("Please enter a number"))
+sum += number
+number = int(input("Please enter a number"))
+sum += number
+number = int(input("Please enter a number"))
+sum += number
+
+print("The sum of the numbers is", sum)
+```
+
+## 1.4 Exercises
+
+These exercises are to be done in the [4ArithmeticAssignment.py](4ArithmeticAssignment.py) file
+
+1. Write a code which asks the user for a number. The program then prints out the number multiplied by five. It should look like this:
+
+   ```text
+   Please type in a number: 3
+   3 times 5 is 15
+   ```
+
+2. Write code which asks the user for their name and year of birth. The program then prints out a message as follows:
+
+   ```text
+   What is your name? Frances Fictitious
+   Which year were you born? 1990
+   Hi Frances Fictitious, you will be 34 years old at the end of the year 2024
+   ```
+
+3. Write code which asks the user for a number of days. The code then prints out the number of seconds in the amount of days given.
+
+   Examples:
+
+   ```text
+   How many days? 1
+   Seconds in that many days: 86400
+
+   How many days? 7
+   Seconds in that many days: 604800
+   ```
+
+4. The code asks the user for three numbers. It then prints out their product, that is, the numbers multiplied by each other. There is, however, something wrong with the code - it doesn't work quite right, as you can see if you run it. Fix it.
+
+   An example of the expected execution of the program:
+
+   ```text
+   Please type in the first number: 2
+   Please type in the second number: 3
+   Please type in the third number: 5
+   The product is 30
+   ```
+
+5. Write code which asks the user for two numbers. It will then print out the sum and the product of the two numbers.
+
+   The program should function as follows:
+
+   ```text
+   Number 1: 3
+   Number 2: 7
+   The sum of the numbers: 10
+   The product of the numbers: 21
+   ```
+
+6. Write code which asks the user for four numbers. It then prints out the sum and the mean of the numbers.
+
+   The program should function as follows:
+
+   ```text
+   Number 1: 2
+   Number 2: 1
+   Number 3: 6
+   Number 4: 7
+   The sum of the numbers is 16 and the mean is 4.0
+   ```
+
+7. Write a program which estimates a user's typical food expenditure.
+
+   The program asks the user how many times a week they eat at the student cafeteria. Then it asks for the price of a typical student lunch, and for money spent on groceries during the week.
+
+   Based on this information the program calculates the user's typical food expenditure both weekly and daily.
+
+   The program should function as follows:
+
+   ```text
+   How many times a week do you eat at the student cafeteria? 4
+   The price of a typical student lunch? 2.5
+   How much money do you spend on groceries in a week? 28.5
+
+   Average food expenditure:
+   Daily: $5.5
+   Weekly: $38.5
+   ```
+
+8. (+) Write code which asks for the number of students on a course and the desired group size. It will then print out the number of groups formed from the students on the course. If the division is not even, one of the groups may have fewer members than specified.
+
+   Hint: the integer division operator `//` could come in handy here.
+
+   ```text
+   How many students on the course? 8
+   Desired group size? 4
+   Number of groups formed: 2
+
+   How many students on the course? 11
+   Desired group size? 3
+   Number of groups formed: 4
+   ```

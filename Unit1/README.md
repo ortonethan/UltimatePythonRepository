@@ -6,6 +6,7 @@ This material is adapted from the [University of Helsinki Python Programming MOO
 - [1.2 - Input From User](#12-input-from-user), [Exercises](#12-exercises)
 - [1.3 - Variables](#13-variables), [Exercises](#13-exercises)
 - [1.4 - Arithmetic Operators](#14-arithmetic-operators), [Exercises](#14-exercises)
+- [1.5 - Conditionals](#15-conditionals), [Exercises](#15-exercises)
 
 ## 1.1 Print Statements
 
@@ -505,4 +506,254 @@ These exercises are to be done in the [4ArithmeticAssignment.py](4ArithmeticAssi
    How many students on the course? 11
    Desired group size? 3
    Number of groups formed: 4
+   ```
+
+## 1.5 Conditionals
+
+Just like in AppInventor, we can use `if` statements to make decisions:
+
+```python
+age = int(input("How old are you? "))
+if age >= 18:
+   print("You are old enough to vote.")
+   print("Here is a ballot")
+print("Next, please")
+```
+
+Note the colon (`:`) following the `if` statement, and the indented code block.
+
+We used the greater than or equals operator (`>=`) in the example above. Here are some other comparison operators:
+
+| Operator | Meaning                  | Example  |
+| -------- | ------------------------ | -------- |
+| `==`     | Equal to                 | `a == b` |
+| `!=`     | Not equal to             | `a != b` |
+| `<`      | Less than                | `a < b`  |
+| `<=`     | Less than or equal to    | `a <= b` |
+| `>`      | Greater than             | `a > b`  |
+| `>=`     | Greater than or equal to | `a >= b` |
+
+Here's code using some of these:
+
+```python
+number = int(input("Please type in a number: "))
+if number < 0:
+   print("The number is negative")
+if number > 0:
+   print("The number is positive")
+if number == 0:
+   print("The number is zero")
+```
+
+The results of comparison operators are always either `True` or `False`. These are called _boolean values_, and you can save them in variables and use them just like other variables.
+
+```python
+a = 3
+a_test = a > 5
+print("The result of the comparison is: ", a_test)
+
+if a_test:
+   print("a is less than 5")
+```
+
+You can also directly assign `True` or ``False` to a variable:
+
+```python
+result = True
+if result:
+   print("This prints every time")
+```
+
+This isn't useful just now, but the idea will be later.
+
+## 1.5 Exercises
+
+1. Ask the user for an integer number. The program should print "Orwell" if the number is exactly 1984, and otherwise do nothing. For example:
+
+   ```text
+   Please type in a number: 1984
+   Orwell
+   ```
+
+   ```text
+   Please type in a number: 2020
+   ```
+
+2. Ask the user for an integer number. If the number is less than zero, print out the number multiplied by -1. Otherwise print the number as-is. Intended behavior:
+
+   ```text
+   Please type in a number: -7
+   The absolute value of this number is 7
+   ```
+
+   ```text
+   Please type in a number: 1
+   The absolute value of this number is 1
+   ```
+
+   ```text
+   Please type in a number: -99
+   The absolute value of this number is 99
+   ```
+
+3. Ask for the user's name. If the name is anything but "Jerry", ask for the number of portions and print out the total cost. The price of a single portion is 5.90. Two examples of the intended behavior:
+
+   ```text
+   What is your name? Kramer
+   How many portions of soup? 2
+   The total cost is 11.8
+   Next please!
+   ```
+
+   ```text
+   What is your name? Jerry
+   Next please!
+   ```
+
+4. Ask the user for an integer number. Print out the magnitude of the number according to the following examples.
+
+   ```text
+   Type in a number: 950
+   This number is smaller than 1000
+   Thank you!
+   ```
+
+   ```text
+   Type in a number: 59
+   This number is smaller than 1000
+   This number is smaller than 100
+   Thank you!
+   ```
+
+   ```text
+   Type in a number: 2
+   This number is smaller than 1000
+   This number is smaller than 100
+   This number is smaller than 10
+   Thank you!
+   ```
+
+5. Ask the user for two numbers and an operation. If the operation is add, multiply or subtract, calculate and print out the result of the operation with the given numbers. If the user types in anything else, print out nothing. Some examples of expected behaviour:
+
+   ```text
+   Number 1: 10
+   Number 2: 17
+   Operation: add
+
+   10 + 17 = 27
+   ```
+
+   ```text
+   Number 1: 4
+   Number 2: 6
+   Operation: multiply
+
+   4 * 6 = 24
+   ```
+
+   ```text
+   Number 1: 4
+   Number 2: 6
+   Operation: subtract
+
+   4 - 6 = -2
+   ```
+
+6. Ask the user for a temperature in degrees Fahrenheit, and print that temperature in degrees Celsius. If the converted temperature falls below zero degrees Celsius, also print out "Brr! It's cold in here!".
+
+   Look up the conversion formula in a search engine.
+
+   Two examples of expected behaviour:
+
+   ```text
+   Type in a temperature (F): 101
+   101 degrees Fahrenheit equals 38.333333333333336 degrees Celsius
+   ```
+
+   ```text
+   Type in a temperature (F): 21
+   21 degrees Fahrenheit equals -6.111111111111111 degrees Celsius
+   Brr! It's cold in here!
+   ```
+
+7. Ask for the hourly wage, hours worked, and the day of the week. Print out the daily wages, which equal hourly wage multiplied by hours worked, except on Sundays when the hourly wage is doubled. For example:
+
+   ```text
+   Hourly wage: 8.5
+   Hours worked: 3
+   Day of the week: Monday
+   Daily wages: $25.5
+   ```
+
+   ```text
+   Hourly wage: 12.5
+   Hours worked: 10
+   Day of the week: Sunday
+   Daily wages: $250.0
+   ```
+
+8. The code in the file calculates the end of year bonus a customer receives on their loyalty card. The bonus is calculated with the following formula:
+
+   - If there are less than a hundred points on the card, the bonus is 10 %
+   - In any other case the bonus is 15 %
+
+   It should work like this:
+
+   ```text
+   How many points are on your card? 55
+   Your bonus is 10 %
+   You now have 60.5 points
+   ```
+
+   But there is a problem with the program, so with some inputs it doesn't work quite right:
+
+   ```text
+   How many points are on your card? 95
+   Your bonus is 10 %
+   Your bonus is 15 %
+   You now have 120.175 points
+   ```
+
+   Fix the program so that there is always either a 10% or a 15% bonus, but never both.
+
+9. Ask for tomorrow's weather forecast and then suggest weather-appropriate clothing.
+
+   The suggestion should change if the temperature (measured in degrees Celsius) is over 20, 10 or 5 degrees, and also if there is rain on the radar.
+
+   Some examples:
+
+   ```text
+   What is the weather forecast for tomorrow?
+   Temperature: 21
+   Will it rain (yes/no): no
+   Wear jeans and a T-shirt
+   ```
+
+   ```text
+   What is the weather forecast for tomorrow?
+   Temperature: 11
+   Will it rain (yes/no): no
+   Wear jeans and a T-shirt
+   I recommend a sweater as well
+   ```
+
+   ```text
+   What is the weather forecast for tomorrow?
+   Temperature: 7
+   Will it rain (yes/no): no
+   Wear jeans and a T-shirt
+   I recommend a sweater as well
+   Take a jacket with you
+   ```
+
+   ```text
+   What is the weather forecast for tomorrow?
+   Temperature: 3
+   Will it rain (yes/no): yes
+   Wear jeans and a T-shirt
+   I recommend a sweater as well
+   Take a jacket with you
+   Make it a warm coat, actually
+   I think gloves are in order
+   Don't forget your umbrella!
    ```

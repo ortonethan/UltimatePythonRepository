@@ -3,6 +3,7 @@ This material is adapted from the [University of Helsinki Python Programming MOO
 ## Table Of Contents
 
 - [2.1 - More Conditionals](#21---more-conditionals), [Exercises](#21-exercises)
+- [2.2 - Compound Conditions](#22---compound-conditions), [Exercises](#22-exercises)
 
 ## 2.1 - More Conditionals
 
@@ -187,3 +188,219 @@ Please type in the 1st word: python
 Please type in the 2nd word: python
 You gave the same word twice.
 ```
+
+## 2.2 - Compound Conditions
+
+You can combine conditions with the logical operators `and` and `or`. The operator `and` specifies that all the given conditions must be true at the same time. The operator `or` specifies that at least one of the given conditions must be true.
+
+For example, `number >= 5 and number <= 8` asserts that `number` must simultaneously be at least 5 and at most 8. That is, it must be between 5 and 8.
+
+```python
+number = int(input("Please type in a number: "))
+if number >= 5 and number <= 8:
+    print("The number is between 5 and 8")
+```
+
+The condition `number < 5 or number > 8` determines that number must be either less than 5 or greater than 8. That is, it must not be within the range of 5 to 8.
+
+```python
+number = int(input("Please type in a number: "))
+if number < 5 or number > 8:
+    print("The number is not within the range of 5 to 8")
+```
+
+The operator `not` can negate a condition. For example, another valid way to check if a number is not within the range of 5 to 8:
+
+```python
+number = int(input("Please type in a number: "))
+if not (number >= 5 and number <= 8):
+    print("The number is not within the range of 5 to 8")
+```
+
+Conditions can be chained and combined, for example:
+
+```python
+n1 = int(input("Number 1: "))
+n2 = int(input("Number 2: "))
+n3 = int(input("Number 3: "))
+n4 = int(input("Number 4: "))
+
+if n1 > n2 and n1 > n3 and n1 > n4:
+    greatest = n1
+elif n2 > n3 and n2 > n4:
+    greatest = n2
+elif n3 > n4:
+    greatest = n3
+else:
+    greatest = n4
+
+print(f" {greatest} is the greatest of the numbers.")
+```
+
+Conditional statements can also be nested within other conditional statements. For example, the following program checks whether a number is above zero, and then whether it is odd or even:
+
+```python
+number = int(input("Please type in a number: "))
+
+if number > 0:
+    if number % 2 == 0:
+        print("The number is even")
+    else:
+        print("The number is odd")
+else:
+    print("The number is negative or zero")
+```
+
+Some examples of how this program behaves:
+
+```text
+Please type in a number: 3
+The number is odd
+```
+
+```text
+Please type in a number: 18
+The number is even
+```
+
+```text
+Please type in a number: -4
+The number is negative or zero
+```
+
+## 2.2 Exercises
+
+These exercises are to be done in the [2CompoundConditionsAssignment.py](2CompoundConditionsAssignment.py) file
+
+1. Write code which asks for the user's age. If the age is not plausible (under 5, or something that can't be an actual human age), the program should print out a comment.
+
+   See examples:
+
+   ```text
+   What is your age? 13
+   Ok, you're 13 years old
+   ```
+
+   ```text
+   What is your age? 2
+   I suspect you can't write quite yet...
+   ```
+
+   ```text
+   What is your age? -4
+   That must be a mistake
+   ```
+
+2. Write code which asks for the user's name. If the name is "Huey", "Dewey" or "Louie", the program should recognise the user as one of Donald Duck's nephews.
+
+   In a similar fashion, if the name is "Morty" or "Ferdie", the program should recognise the user as one of Mickey Mouse's nephews.
+
+   For example:
+
+   ```text
+   Please type in your name: Morty
+   I think you might be one of Mickey Mouse's nephews.
+   ```
+
+   ```text
+   Please type in your name: Huey
+   I think you might be one of Donald Duck's nephews.
+   ```
+
+   ```text
+   Please type in your name: Ken
+   You're not a nephew of any character I know of.
+   ```
+
+3. The following table gives the grade boundaries for a class:
+
+   | percent | grade       |
+   | ------- | ----------- |
+   | < 0     | impossible! |
+   | 0-59    | F           |
+   | 60-69   | D           |
+   | 70-79   | C           |
+   | 80-89   | B           |
+   | 90-100  | A           |
+   | > 100   | impossible! |
+
+   Write code which asks for the user's score and then prints out the grade. For example
+
+   ```text
+   Type in percent: 77
+   Grade: C
+   ```
+
+   ```text
+   Type in percent: 99
+   Grade: A
+   ```
+
+   ```text
+   Type in percent: 101
+   Grade: impossible!
+   ```
+
+4. Ask the user for an integer number. If the number is divisible by three, the program should print out "Fizz". If the number is divisible by five, the program should print out "Buzz". If the number is divisible by both three and five, the program should print out "FizzBuzz".
+
+   Some examples of expected behaviour:
+
+   ```text
+   Number: 9
+   Fizz
+   ```
+
+   ```text
+   Number: 7
+   ```
+
+   ```text
+   Number: 20
+   Buzz
+   ```
+
+   ```text
+   Number: 45
+   FizzBuzz
+   ```
+
+5. Generally, any year that is divisible by four is a leap year. However, if the year is additionally divisible by 100 it is not a leap year. Unless it is also divisible by 400, then it is a leap year.
+
+   Ask the user for a year, and then print out whether that year is a leap year or not.
+
+   Some examples:
+
+   ```text
+   Please type in a year: 2011
+   That year is not a leap year.
+   ```
+
+   ```text
+   Please type in a year: 2020
+   That year is a leap year.
+   ```
+
+   ```text
+   Please type in a year: 1800
+   That year is not a leap year.
+   ```
+
+6. Ask the user for three letters. Then print out whichever of the three letters would be in the middle if the letters were in alphabetical order.
+
+   You may assume the letters will be either all uppercase, or all lowercase.
+
+   Some examples of expected behaviour:
+
+   ```text
+   1st letter: x
+   2nd letter: c
+   3rd letter: p
+   The letter in the middle is p
+   ```
+
+   ```text
+   1st letter: C
+   2nd letter: B
+   3rd letter: A
+   The letter in the middle is B
+   ```

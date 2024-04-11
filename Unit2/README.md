@@ -404,3 +404,104 @@ These exercises are to be done in the [2CompoundConditionsAssignment.py](2Compou
    3rd letter: A
    The letter in the middle is B
    ```
+
+## 2.3 - While True Loops Intro
+
+This code asks the user to type in a number and then prints out the number squared. This continues until the user types in -1.
+
+```python
+while True:
+    number = int(input("Please type in a number, -1 to quit: "))
+
+    if number == -1:
+        break
+
+    print(number ** 2)
+
+print("Thanks and bye!")
+```
+
+This code is an infinite loop because it never gets another chance to exit from the loop
+
+```python
+number = int(input("Please type in a number, -1 to quit: "))
+while True:
+    if number == -1:
+        break
+
+    print(number ** 2)
+
+print("Thanks and bye!")
+```
+
+## 2.3 Exercises
+
+These exercises are to be done in the [3WhileTrueLoopsIntroAssignment.py](3WhileTrueLoopsIntroAssignment.py) file.
+
+1. Write code to print out the message "hi" and then ask "Shall we continue?" until the user inputs "no". Then print out "okay then" and finish. For example:
+
+   ```text
+   hi
+   Shall we continue? yes
+   hi
+   Shall we continue? oui
+   hi
+   Shall we continue? jawohl
+   hi
+   Shall we continue? no
+   okay then
+   ```
+
+2. Ask the user for integer numbers. If the number is below zero, the program should print out the message "Invalid number". If the number is above zero, the program should print out the square root of the number using the Python `sqrt` function. In either case, the program should then ask for another number. If the user inputs the number zero, the program should stop asking for numbers and exit the loop.
+
+   Here's how to use the `sqrt` function in a python program:
+
+   ```python
+   # sqrt function will not work without this line in the beginning of the program
+   from math import sqrt
+
+   print(sqrt(9)) # should print 3.0
+   ```
+
+   An example of expected behaviour of your program:
+
+   ```text
+   Please type in a number: 16
+   4.0
+   Please type in a number: 4
+   2.0
+   Please type in a number: -3
+   Invalid number
+   Please type in a number: 1
+   1.0
+   Please type in a number: 0
+   Exiting...
+   ```
+
+3. The code in the file should print out:
+
+   ```text
+   Countdown!
+   5
+   4
+   3
+   2
+   1
+   Now!
+   ```
+
+   However, the program doesn't quite work. Fix it.
+
+4. Ask the user for a password. Then ask the user to type in the password again. If they type in something other than the password, keep asking until they type it correctly.
+
+   For example:
+
+   ```text
+   Password: sekred
+   Repeat password: secret
+   They do not match!
+   Repeat password: cantremember
+   They do not match!
+   Repeat password: sekred
+   User account created!
+   ```

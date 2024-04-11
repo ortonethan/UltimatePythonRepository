@@ -434,6 +434,59 @@ while True:
 print("Thanks and bye!")
 ```
 
+Sometimes you can create "helper variables" to help break from the loop at the right time. Suppose someone's PIN code was 1234. The following code gives three attempts to type in the correct PIN:
+
+```python
+attempts = 0
+
+while True:
+    code = input("Please type in your PIN: ")
+    attempts += 1
+
+    if code == "1234":
+        success = True
+        break
+
+    if attempts == 3:
+        success = False
+        break
+
+    # this is printed if the code was incorrect AND there have been less than three attempts
+    print("Incorrect...try again")
+
+if success:
+    print("Correct PIN entered!")
+else:
+    print("Too many attempts...")
+```
+
+This code instead keeps track of all the PIN codes that have been tried:
+
+```python
+codes = ""
+attempts = 0
+
+while True:
+    code = input("Please type in your PIN: ")
+    attempts += 1
+    codes += code + ", "
+
+    if code == "1234":
+        success = True
+        break
+
+    if attempts == 3:
+        success = False
+        break
+
+if success:
+    print("Correct PIN entered!")
+else:
+    print("Too many attempts...")
+
+print("Codes attempted were:", codes)
+```
+
 ## 2.3 Exercises
 
 These exercises are to be done in the [3WhileTrueLoopsIntroAssignment.py](3WhileTrueLoopsIntroAssignment.py) file.
@@ -504,4 +557,80 @@ These exercises are to be done in the [3WhileTrueLoopsIntroAssignment.py](3While
    They do not match!
    Repeat password: sekred
    User account created!
+   ```
+
+5. Keeps asking the user for a PIN code until they type in the correct one, which is 4321. The code should print out the number of times the user tried different codes. If the user gets it right on the first try, it should print out something a bit different:
+
+   ```text
+   PIN: 3245
+   Wrong
+   PIN: 1234
+   Wrong
+   PIN: 0000
+   Wrong
+   PIN: 4321
+   Correct! It took you 4 attempts
+   ```
+
+   ```text
+   PIN: 4321
+   Correct! It only took you a single attempt!
+   ```
+
+6. Ask the user for a year, and print out the next leap year. If the user types a year which is a leap year (such as 2024), the code should print out the following leap year.
+
+   ```text
+   Year: 2023
+   The next leap year after 2023 is 2024
+   ```
+
+   ```text
+   Year: 2024
+   The next leap year after 2024 is 2028
+   ```
+
+7. Write code which keeps asking the user for words. If the user types in "end", print out the story the words formed, and finish.
+
+   ```text
+   Please type in a word: Once
+   Please type in a word: upon
+   Please type in a word: a
+   Please type in a word: time
+   Please type in a word: there
+   Please type in a word: was
+   Please type in a word: a
+   Please type in a word: girl
+   Please type in a word: end
+   Once upon a time there was a girl
+   ```
+
+8. Like in the previous example, ask the user to type in words. However, in this case, the code should also end if the user types in the same word twice in a row.
+
+   ```text
+   Please type in a word: Once
+   Please type in a word: upon
+   Please type in a word: a
+   Please type in a word: time
+   Please type in a word: there
+   Please type in a word: was
+   Please type in a word: a
+   Please type in a word: girl
+   Please type in a word: end
+   Once upon a time there was a girl
+   ```
+
+9. Ask the user for (integer) numbers until they type in the number 0. After this, print out how many numbers have been typed in, their sum, their mean (aka average), and how many positive and negative numbers have been typed in. For example:
+
+   ```text
+   Please type in integer numbers. Type in 0 to finish.
+   Number: 5
+   Number: 22
+   Number: 9
+   Number: -2
+   Number: 0
+   Numbers typed in: 4
+   Sum of numbers: 34
+   Mean of numbers: 8.5
+   Positive numbers: 3
+   Negative numbers: 1
    ```

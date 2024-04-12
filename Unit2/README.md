@@ -4,6 +4,7 @@ This material is adapted from the [University of Helsinki Python Programming MOO
 
 - [2.1 - More Conditionals](#21---more-conditionals), [Exercises](#21-exercises)
 - [2.2 - Compound Conditions](#22---compound-conditions), [Exercises](#22-exercises)
+- [2.3 - While True Loops](#23---while-true-loops), [Exercises](#23-exercises)
 
 ## 2.1 - More Conditionals
 
@@ -405,7 +406,7 @@ These exercises are to be done in the [2CompoundConditionsAssignment.py](2Compou
    The letter in the middle is B
    ```
 
-## 2.3 - While True Loops Intro
+## 2.3 - While True Loops
 
 This code asks the user to type in a number and then prints out the number squared. This continues until the user types in -1.
 

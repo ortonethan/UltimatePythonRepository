@@ -22,6 +22,24 @@
 #if n1 == n2:
 #    print("The numbers are equal!: ", n1)
 # print("########## 2.1.5 ##########")
-print("person 1:")
-
+#print("person 1: ")
+#n1 = input("Name: ")
+#a1 = input("Age: ")
+#print("person 2: ")
+#n2 = input("Name: ")
+#a2 = input("Age: ")
+#if n1 > n2:
+#    print("the elder is ", n1)
+#if n1 < n2:
+#    print("the elder is ", n2)
+#if n1 == n2:
+#    print(n1 , " and " , n2 , "are the same age")
 # print("########## 2.1.6 ##########")
+n1 = (input("Please type in the 1st word: "))
+n2 = (input("Please type in the 2st word: "))
+if n1 > n2:
+    print(n1, "comes alphabetically last. ")
+elif n1 < n2:
+    print(n2, "comes alphabetically last. ")
+if n1 == n2:
+    print("You gave the same word twice.")

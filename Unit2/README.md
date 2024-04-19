@@ -4,6 +4,7 @@ This material is adapted from the [University of Helsinki Python Programming MOO
 
 - [2.1 - More Conditionals](#21---more-conditionals), [Exercises](#21-exercises)
 - [2.2 - Compound Conditions](#22---compound-conditions), [Exercises](#22-exercises)
+- [2.3 - While True Loops](#23---while-true-loops), [Exercises](#23-exercises)
 
 ## 2.1 - More Conditionals
 
@@ -403,4 +404,234 @@ These exercises are to be done in the [2CompoundConditionsAssignment.py](2Compou
    2nd letter: B
    3rd letter: A
    The letter in the middle is B
+   ```
+
+## 2.3 - While True Loops
+
+This code asks the user to type in a number and then prints out the number squared. This continues until the user types in -1.
+
+```python
+while True:
+    number = int(input("Please type in a number, -1 to quit: "))
+
+    if number == -1:
+        break
+
+    print(number ** 2)
+
+print("Thanks and bye!")
+```
+
+This code is an infinite loop because it never gets another chance to exit from the loop
+
+```python
+number = int(input("Please type in a number, -1 to quit: "))
+while True:
+    if number == -1:
+        break
+
+    print(number ** 2)
+
+print("Thanks and bye!")
+```
+
+Sometimes you can create "helper variables" to help break from the loop at the right time. Suppose someone's PIN code was 1234. The following code gives three attempts to type in the correct PIN:
+
+```python
+attempts = 0
+
+while True:
+    code = input("Please type in your PIN: ")
+    attempts += 1
+
+    if code == "1234":
+        success = True
+        break
+
+    if attempts == 3:
+        success = False
+        break
+
+    # this is printed if the code was incorrect AND there have been less than three attempts
+    print("Incorrect...try again")
+
+if success:
+    print("Correct PIN entered!")
+else:
+    print("Too many attempts...")
+```
+
+This code instead keeps track of all the PIN codes that have been tried:
+
+```python
+codes = ""
+attempts = 0
+
+while True:
+    code = input("Please type in your PIN: ")
+    attempts += 1
+    codes += code + ", "
+
+    if code == "1234":
+        success = True
+        break
+
+    if attempts == 3:
+        success = False
+        break
+
+if success:
+    print("Correct PIN entered!")
+else:
+    print("Too many attempts...")
+
+print("Codes attempted were:", codes)
+```
+
+## 2.3 Exercises
+
+These exercises are to be done in the [3WhileTrueLoopsIntroAssignment.py](3WhileTrueLoopsIntroAssignment.py) file.
+
+1. Write code to print out the message "hi" and then ask "Shall we continue?" until the user inputs "no". Then print out "okay then" and finish. For example:
+
+   ```text
+   hi
+   Shall we continue? yes
+   hi
+   Shall we continue? oui
+   hi
+   Shall we continue? jawohl
+   hi
+   Shall we continue? no
+   okay then
+   ```
+
+2. Ask the user for integer numbers. If the number is below zero, the program should print out the message "Invalid number". If the number is above zero, the program should print out the square root of the number using the Python `sqrt` function. In either case, the program should then ask for another number. If the user inputs the number zero, the program should stop asking for numbers and exit the loop.
+
+   Here's how to use the `sqrt` function in a python program:
+
+   ```python
+   # sqrt function will not work without this line in the beginning of the program
+   from math import sqrt
+
+   print(sqrt(9)) # should print 3.0
+   ```
+
+   An example of expected behaviour of your program:
+
+   ```text
+   Please type in a number: 16
+   4.0
+   Please type in a number: 4
+   2.0
+   Please type in a number: -3
+   Invalid number
+   Please type in a number: 1
+   1.0
+   Please type in a number: 0
+   Exiting...
+   ```
+
+3. The code in the file should print out:
+
+   ```text
+   Countdown!
+   5
+   4
+   3
+   2
+   1
+   Now!
+   ```
+
+   However, the program doesn't quite work. Fix it.
+
+4. Ask the user for a password. Then ask the user to type in the password again. If they type in something other than the password, keep asking until they type it correctly.
+
+   For example:
+
+   ```text
+   Password: sekred
+   Repeat password: secret
+   They do not match!
+   Repeat password: cantremember
+   They do not match!
+   Repeat password: sekred
+   User account created!
+   ```
+
+5. Keeps asking the user for a PIN code until they type in the correct one, which is 4321. The code should print out the number of times the user tried different codes. If the user gets it right on the first try, it should print out something a bit different:
+
+   ```text
+   PIN: 3245
+   Wrong
+   PIN: 1234
+   Wrong
+   PIN: 0000
+   Wrong
+   PIN: 4321
+   Correct! It took you 4 attempts
+   ```
+
+   ```text
+   PIN: 4321
+   Correct! It only took you a single attempt!
+   ```
+
+6. Ask the user for a year, and print out the next leap year. If the user types a year which is a leap year (such as 2024), the code should print out the following leap year.
+
+   ```text
+   Year: 2023
+   The next leap year after 2023 is 2024
+   ```
+
+   ```text
+   Year: 2024
+   The next leap year after 2024 is 2028
+   ```
+
+7. Write code which keeps asking the user for words. If the user types in "end", print out the story the words formed, and finish.
+
+   ```text
+   Please type in a word: Once
+   Please type in a word: upon
+   Please type in a word: a
+   Please type in a word: time
+   Please type in a word: there
+   Please type in a word: was
+   Please type in a word: a
+   Please type in a word: girl
+   Please type in a word: end
+   Once upon a time there was a girl
+   ```
+
+8. Like in the previous example, ask the user to type in words. However, in this case, the code should also end if the user types in the same word twice in a row.
+
+   ```text
+   Please type in a word: Once
+   Please type in a word: upon
+   Please type in a word: a
+   Please type in a word: time
+   Please type in a word: there
+   Please type in a word: was
+   Please type in a word: a
+   Please type in a word: girl
+   Please type in a word: end
+   Once upon a time there was a girl
+   ```
+
+9. Ask the user for (integer) numbers until they type in the number 0. After this, print out how many numbers have been typed in, their sum, their mean (aka average), and how many positive and negative numbers have been typed in. For example:
+
+   ```text
+   Please type in integer numbers. Type in 0 to finish.
+   Number: 5
+   Number: 22
+   Number: 9
+   Number: -2
+   Number: 0
+   Numbers typed in: 4
+   Sum of numbers: 34
+   Mean of numbers: 8.5
+   Positive numbers: 3
+   Negative numbers: 1
    ```

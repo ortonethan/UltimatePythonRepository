@@ -4,6 +4,7 @@ This material is adapted from the [University of Helsinki Python Programming MOO
 
 - [3.1 - While Loops](#31---while-loops), [Exercises](#31-exercises)
 - [3.2 - Basic String Operations](#32---basic-string-operations), [Exercises](#32-exercises)
+- [3.3 - Slices and Searching](#33---slices-and-searching), [Exercises](#33-exercises)
 
 ## 3.1 - While Loops
 
@@ -323,4 +324,168 @@ These exercises are to be done in the [2BasicStringAssignment.py](2BasicStringAs
    ******************************
    *           python           *
    ******************************
+   ```
+
+## 3.3 - Slices and Searching
+
+### Slices
+
+By using indexes, we've extracted single letters from strings. It's also possible to extract a part of the string longer than one letter, by "slicing":
+
+```python
+original = "presumptious"
+
+slice1 = original[0:3]
+print(slice1) # left index is included, right is not
+slice2 = original[4:10]
+print(slice2) # left index is included, right is not
+slice3 = original[:3]
+print(slice3) # omitted left index defaults to zero
+slice4 = original[4:]
+print(slice4) # omitted right index defaults to length
+```
+
+### Checking _if_ a substring appears using `in`
+
+```python
+string = "test"
+
+print("t" in string)
+print("x" in string)
+print("es" in string)
+print("ets" in string)
+```
+
+### Checking _where_ a substring appears using `find`
+
+```python
+string = "test"
+
+print(string.find("t"))
+print(string.find("x"))
+print(string.find("es"))
+print(string.find("ets"))
+```
+
+## 3.3 Exercises
+
+Complete these exercises in the [3SlicesAndSearchingAssignment.py](3SlicesAndSearchingAssignment.py) file.
+
+1. Ask the user to type in a string. Print all the substrings which begin with the first character, from the shortest to the longest.
+
+   ```text
+   Please type in a string: test
+   t
+   te
+   tes
+   test
+   ```
+
+2. Ask the user to type in a string. Print all the substrings which end with the last character, from the shortest to the longest.
+
+   ```text
+   Please type in a string: test
+   t
+   st
+   est
+   test
+   ```
+
+3. Ask the user to enter a string. Report whether the vowels a, e, or o are found.
+
+   You may assume the input will be in lowercase
+
+   ```text
+   Please type in a string: hello there
+   a not found
+   e found
+   o found
+   ```
+
+   ```text
+   Please type in a string: hiya
+   a found
+   e not found
+   o not found
+   ```
+
+4. Ask the user to type in a string and then a single character. Print the first three character slice which begins with the character specified by the user. You may assume the input string is at least three characters long. The program must print out three characters, or else nothing.
+
+   Pay special attention to when there are less than two characters left in the string after the first occurrence of the character looked for. In that case nothing should be printed out, and there should not be any indexing errors when executing the program.
+
+   ```text
+   Please type in a word: mammoth
+   Please type in a character: m
+   mam
+   ```
+
+   ```text
+   Please type in a word: banana
+   Please type in a character: n
+   nan
+   ```
+
+   ```text
+   Please type in a word: tomato
+   Please type in a character: x
+   ```
+
+   ```text
+   Please type in a word: python
+   Please type in a character: n
+   ```
+
+5. Make an extended version of the previous part, which prints out _all_ the substrings which are at least three characters long, and which begin with the character specified by the user. You may assume the input string is at least three characters long.
+
+   ```text
+   Please type in a word: mammoth
+   Please type in a character: m
+   mam
+   mmo
+   mot
+   ```
+
+   ```text
+   Please type in a word: banana
+   Please type in a character: n
+   nan
+   ```
+
+   Hint: the following python code may give you some inspiration as to how this exercise could be tackled:
+
+   ```python
+   word = input("Word: ")
+   while True:
+   if len(word) == 0:
+   break
+   print(word)
+   word = word[2:]
+   ```
+
+   ```text
+   Word: mammoth
+   mammoth
+   mmoth
+   oth
+   h
+   ```
+
+6. Write code which finds the second occurrence of a substring. If there is no second (or first) occurrence, print out a message accordingly.
+
+   ```text
+   Please type in a string: abcabc
+   Please type in a substring: ab
+   The second occurrence of the substring is at index 3.
+   ```
+
+   ```text
+   Please type in a string: methodology
+   Please type in a substring: o
+   The second occurrence of the substring is at index 6.
+   ```
+
+   ```text
+   Please type in a string: aybabtu
+   Please type in a substring: ba
+   The substring does not occur twice in the string.
    ```

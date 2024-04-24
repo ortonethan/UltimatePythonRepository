@@ -27,7 +27,7 @@ print("Countdown!")
 while True:
   print(number)
   number = number - 1
-  if number > 0:
+  if number < 1:
     break
 
 print("Now!")
@@ -36,13 +36,11 @@ print("Now!")
 while True:
     p1 = (input("Password: "))
     p2 = (input("Repeat Password: "))
-
+    if p1 != p2:
+       print("They do not match!")
     if p1 == p2:
-        print("User account created!")
-    
-        break
-    print("Exiting...")
-
+       print("User account created!")
+       break
 # ========== 2.3.5 ==========
 
 

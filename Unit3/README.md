@@ -5,6 +5,7 @@ This material is adapted from the [University of Helsinki Python Programming MOO
 - [3.1 - While Loops](#31---while-loops), [Exercises](#31-exercises)
 - [3.2 - Basic String Operations](#32---basic-string-operations), [Exercises](#32-exercises)
 - [3.3 - Slices and Searching](#33---slices-and-searching), [Exercises](#33-exercises)
+- [3.4 - Functions Intro](#34---functions-intro), [Exercises](#34-exercises)
 
 ## 3.1 - While Loops
 
@@ -488,4 +489,169 @@ Complete these exercises in the [3SlicesAndSearchingAssignment.py](3SlicesAndSea
    Please type in a string: aybabtu
    Please type in a substring: ba
    The substring does not occur twice in the string.
+   ```
+
+## 3.4 - Functions Intro
+
+We have already used functions such as len, print and input in our programs. We can also define our own functions using the `def` keyword:
+
+```python
+def message():
+   print("This is my very own function!")
+```
+
+This function is called `message`. But if you run the code, nothing will appear to happen. The is because we have to "call" the function to run the code inside it:
+
+```python
+message()
+```
+
+It can be called multiple times:
+
+```python
+message()
+message()
+message()
+```
+
+We can pass "arguments" to functions. These are values that the function can use when it runs. For example:
+
+```python
+def hello(name):
+   print("Hello", name, "!")
+
+hello("Alice")
+hello("world")
+```
+
+Here are other examples:
+
+```python
+def squared(x):
+    print(f"The square of the number {x} is {x * x}")
+
+squared(2)
+squared(5)
+```
+
+```python
+def sum(x, y):
+    result = x + y
+    print(f"The sum of the arguments {x} and {y} is {result}")
+
+sum(1, 2)
+sum(5, 24)
+```
+
+## 3.4 Exercises
+
+Complete these exercises in the [4FunctionsIntroAssignment.py](4FunctionsIntroAssignment.py) file.
+
+1. Write a function named `seven_dwarves`. When the function is called, it should print out the names of the seven dwarves in alphabetical order as shown:
+
+   ```text
+   Bashful
+   Doc
+   Dopey
+   Grumpy
+   Happy
+   Sleepy
+   Sneezy
+   ```
+
+2. Write a function called `first_character` that takes one argument, and prints out the first character of that argument.
+
+   ```python
+   first_character('python')
+   first_character('yellow')
+   first_character('tomorrow')
+   first_character('heliotrope')
+   first_character('open')
+   first_character('night')
+   ```
+
+   ```text
+   p
+   y
+   t
+   h
+   o
+   n
+   ```
+
+3. Write a function named `mean`, which takes three integer arguments. The function should print out the arithmetic mean of the three arguments.
+
+   ```python
+   mean(5, 3, 1)
+   mean(10, 1, 1)
+   ```
+
+   ```text
+   3.0
+   4.0
+   ```
+
+4. Write a function named `print_many_times(text, times)`, which takes a string and an integer as arguments. The integer argument specifies how many times the string argument should be printed out:
+
+   ```python
+   print_many_times("hi", 5)
+
+   print()
+
+   text = "All Pythons, except one, grow up"
+   times = 3
+   print_many_times(text, times)
+   ```
+
+   ```text
+   hi
+   hi
+   hi
+   hi
+   hi
+
+   All Pythons, except one, grow up.
+   All Pythons, except one, grow up.
+   All Pythons, except one, grow up.
+   ```
+
+5. Write a function named `hash_square(length)`, which takes an integer argument. The function prints out a square of hash characters, and the argument specifies the length of the side of the square.
+
+   ```python
+   hash_square(3)
+   print()
+   hash_square(5)
+   ```
+
+   ```text
+   ###
+   ###
+   ###
+
+   #####
+   #####
+   #####
+   #####
+   #####
+   ```
+
+6. Write a function named `chessboard`, which prints out a chessboard made out of ones and zeroes. The function takes an integer argument, which specifies the length of the side of the board.
+
+   ```python
+   chessboard(3)
+   print()
+   chessboard(6)
+   ```
+
+   ```text
+   101
+   010
+   101
+
+   101010
+   010101
+   101010
+   010101
+   101010
+   010101
    ```

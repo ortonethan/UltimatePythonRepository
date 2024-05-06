@@ -30,11 +30,10 @@
 # print("########## 2.2.4 ##########")
 # number = int(input("Number: "))
 # if number %3 == 0:
-#     print("Fizz")
+#     print("Fizz", end="")
 # if number %5 == 0:
 #     print("Buzz")
-# elif number %5 == 0 and number %3 == 0:
-#     print("FizzBuzz")
+
 # else:
 #     print("")
 # print("########## 2.2.5 ##########")

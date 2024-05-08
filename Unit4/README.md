@@ -3,6 +3,7 @@ This material is adapted from the [University of Helsinki Python Programming MOO
 ## Table Of Contents
 
 - [4.1 - Printing Functions](#41---printing-functions), [Exercises](#41-exercises)
+- [4.2 - Returning Functions](#42---returning-functions), [Exercises](#42-exercises)
 
 ## 4.1 - Printing Functions
 
@@ -213,3 +214,75 @@ Complete these exercises in the [1PrintingFunctionsAssignment.py](1PrintingFunct
    ```
 
    NB: to the left of the spruce there should be exactly the right amount of whitespace. The left edge of the tree should be touching the left edge of the text area in the terminal.
+
+## 4.2 - Returning Functions
+
+So far all our functions have printed something. However, sometimes we want to store the result of a function to use later. To do this, we need to use the `return` statement within a function. This statement causes the function to stop running, and makes available (to the code that called the function) the return value.
+
+```python
+def print_sum(a, b):
+   print("The sum of", a, "and", b, "is", a + b)
+
+def return_sum(a, b):
+   return a + b
+
+total = print_sum(3, 7)
+print("The value returned was:", total)
+
+total = return_sum(3, 7)
+print("The value returned was:", total)
+```
+
+Here's a useful comparison function:
+
+```python
+def smallest(a, b):
+   if a < b:
+      return a
+   return b
+```
+
+## 4.2 Exercises
+
+Complete these exercises in the [2ReturningFunctionsAssignment.py](2ReturningFunctionsAssignment.py) file.
+
+1. Write a function named `greatest_number`, which takes three arguments. The function returns the greatest of the three.
+
+   An example of how the function is used:
+
+   ```python
+   print(greatest_number(3, 4, 1)) # 4
+   print(greatest_number(99, -4, 7)) # 99
+   print(greatest_number(0, 0, 0)) # 0
+   ```
+
+2. Write a function named `same_chars`, which takes one string and two integers as arguments. The integers refer to indexes within the string. The function should return `True` if the two characters at the indexes specified are the same. Otherwise, and especially if either of the indexes falls outside the scope of the string, the function returns `False`.
+
+   For example:
+
+   ```python
+   # same characters m and m
+   print(same_chars("programmer", 6, 7)) # True
+
+   # different characters p and r
+   print(same_chars("programmer", 0, 4)) # False
+
+   # the second index is not within the string
+   print(same_chars("programmer", 0, 12)) # False
+   ```
+
+3. Write three functions: `first_word`, `second_word` and `last_word`. Each function takes a string argument.
+
+   As their names imply, the functions return either the first, the second or the last word in the sentence they receive as their string argument.
+
+   In each case you may assume the argument string contains at least two separate words, and all words are separated by exactly one space character. There will be no spaces in the beginning or at the end of the argument strings.
+
+   For example:
+
+   ```python
+   sentence = "it was a dark and stormy python"
+
+   print(first_word(sentence)) # it
+   print(second_word(sentence)) # was
+   print(last_word(sentence)) # python
+   ```

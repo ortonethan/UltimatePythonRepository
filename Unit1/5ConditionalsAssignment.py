@@ -65,3 +65,15 @@ elif points >= 100:
 
 print("########## 1.5.9 ##########")
 print("What is the weather forcast tomorrow?")
+temp = int(input("temperature:"))
+rain = input("will it rain? (yes/no):")
+print("wear jeans and a t-shirt")
+if temp <= 20:
+    print("I recomend a sweater aswell")
+if temp <= 10:
+    print("Take a jacket with you")
+if temp <= 5:
+    print("Make it a warm coat actually")
+    print("I think gloves are in order")
+if rain == "yes":
+    print("Dont forget your umbrella!")

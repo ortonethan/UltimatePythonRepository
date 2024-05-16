@@ -84,5 +84,9 @@ while True:
         break
 
 # ========== 2.3.9 ==========
-
+n = ""
+sum = 0
+mean = 0
+pos = 0
+neg = 0
 

@@ -84,5 +84,26 @@ while True:
         break
 
 # ========== 2.3.9 ==========
-
+n = 0
+s = 0
+m = 0
+p = 0
+n = 0
+t = 0
+print("please type in integer number. type 0 to finish. ")
+while True:
+    n = int(input("number: "))
+    if n == 0:
+        print("numbers typed in:", t)
+        print("sum of numbers:", s)
+        print("mean of numbers", s/t)
+        print("positive numbers", p)
+        print("negitive numbers:", n)
+    else:
+        t = t +1
+        s = s + n
+    if n < 0:
+        n = n + 1
+    else:
+        p = p +1
 

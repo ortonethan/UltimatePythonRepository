@@ -5,6 +5,7 @@ This material is adapted from the [University of Helsinki Python Programming MOO
 - [4.1 - Printing Functions](#41---printing-functions), [Exercises](#41-exercises)
 - [4.2 - Returning Functions](#42---returning-functions), [Exercises](#42-exercises)
 - [4.3 - Lists Intro](#43---lists-intro), [Exercises](#43-exercises)
+- [4.4 - `for` loops](#44---for-loops), [Exercises](#44-exercises)
 
 ## 4.1 - Printing Functions
 
@@ -475,4 +476,217 @@ These exercises are completed in the [3ListsIntroAssignment.py](3ListsIntroAssig
    Word: time
    Word: upon
    You typed in 4 different words
+   ```
+
+## 4.4 - `for` loops
+
+### looping through lists
+
+Doing something for every item in a list (for example, printing it), is a very common task, but requires quite a lot of code to do using a `while` loop:
+
+```python
+items = [3, 2, 4, 5, 2]
+index = 0
+while index < len(items):
+   print(items[index])
+   index += 1
+```
+
+Python has a special type of loop for this:
+
+```python
+items = [3, 2, 4, 5, 2]
+for item in items:
+   print(item)
+```
+
+This works for strings too:
+
+```python
+word = "example"
+for letter in word:
+   print(letter)
+```
+
+### looping through a range
+
+There's a function called `range` which can generate numbers to loop through. It has 3 different versions taking different numbers of arguments.
+
+Providing `range` with one numeric argument generates numbers from zero up to (but not including) that number:
+
+```python
+for i in range(5):
+   print(i)
+```
+
+Providing two arguments generates numbers from (and including) the first number up to (not including) the second:
+
+```python
+for i in range(3, 7):
+   print(i)
+```
+
+The third argument allows you to specify the step size:
+
+```python
+for i in range(1, 9, 2):
+   print(i)
+```
+
+It can be negative, to count down (but you also need to reverse the from and to numbers):
+
+```python
+for i in range(6, 2, -1):
+   print(i)
+```
+
+## 4.4 Exercises
+
+These exercises are completed in the [4ForLoopsAssignment.py](4ForLoopsAssignment.py) file.
+
+1. write code which asks the user to type in a string. Prints each input character on a separate line. After each character there should be a star ("\*") printed on its own line.
+
+   This is how it should work:
+
+   ```plaintext
+   Please type in a string: Python
+   P
+   *
+   y
+   *
+   t
+   *
+   h
+   *
+   o
+   *
+   n
+   *
+   ```
+
+2. Write code which asks the user for a positive integer N. Print all numbers between -N and N inclusive, but leave out the number 0. Each number should be printed on a separate line.
+
+   An example of expected behaviour:
+
+   ```plaintext
+   Please type in a positive integer: 4
+   -4
+   -3
+   -2
+   -1
+   1
+   2
+   3
+   4
+   ```
+
+3. Write a function named `list_of_stars`, which takes a list of integers as its argument. The function should print out lines of star characters. The numbers in the list specify how many stars each line should contain.
+
+   For example, with the function call `list_of_stars([3, 7, 1, 1, 2])` the following should be printed out:
+
+   ```plaintext
+   ***
+   *******
+   *
+   *
+   **
+   ```
+
+4. Write a function named `palindromes`, which takes a string argument and returns `True` if the string is a palindrome, and `False` otherwise. Palindromes are words which are spelled exactly the same backwards and forwards.
+
+   Examples of use:
+
+   ```python
+   print(palindromes("python")) # False
+   print(palindromes("java")) # False
+   print(palindromes("neveroddoreven")) # True
+   print(palindromes("racecar")) # True
+   ```
+
+5. Write a function named `sum_of_positives`, which takes a list of integers as its argument. The function returns the sum of the positive values in the list.
+
+   This code:
+
+   ```python
+   my_list = [1, -2, 3, -4, 5]
+   result = sum_of_positives(my_list)
+   print("The result is", result)
+   ```
+
+   should print
+
+   ```plaintext
+   The result is 9
+   ```
+
+6. Write a function named `even_numbers`, which takes a list of integers as an argument. The function returns a new list containing the even numbers from the original list.
+
+   This code:
+
+   ```python
+   my_list = [1, 2, 3, 4, 5]
+   new_list = even_numbers(my_list)
+   print("original", my_list)
+   print("new", new_list)
+   ```
+
+   should print
+
+   ```plaintext
+   original [1, 2, 3, 4, 5]
+   new [2, 4]
+   ```
+
+7. Write a function named `list_sum` which takes two lists of integers as arguments. The function returns a new list which contains the sums of the items at each index in the two original lists. You may assume both lists have the same number of items.
+
+   An example of the function at work:
+
+   ```python
+   a = [1, 2, 3]
+   b = [7, 8, 9]
+   print(list_sum(a, b)) # [8, 10, 12]
+   ```
+
+8. Write a function named `length_of_longest`, which takes a list of strings as its argument. The function returns the length of the longest string.
+
+   This code:
+
+   ```python
+   my_list = ["first", "second", "fourth", "eleventh"]
+
+   result = length_of_longest(my_list)
+   print(result)
+   my_list = ["adele", "mark", "dorothy", "tim", "hedy", "richard"]
+
+   result = length_of_longest(my_list)
+   print(result)
+   ```
+
+   should print
+
+   ```plaintext
+   8
+   7
+   ```
+
+9. Write a function named `shortest`, which takes a list of strings as its argument. The function returns whichever of the strings is the shortest.
+
+   This code:
+
+   ```python
+   my_list = ["first", "second", "fourth", "eleventh"]
+
+   result = shortest(my_list)
+   print(result)
+   my_list = ["adele", "mark", "dorothy", "tim", "hedy", "richard"]
+
+   result = shortest(my_list)
+   print(result)
+   ```
+
+   Should print
+
+   ```plaintext
+   first
+   tim
    ```
